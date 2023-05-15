@@ -33,7 +33,6 @@ const paramFunc = () => {
 }
 paramFunc()
 
-
 console.log('-----------------Closure-----------------------------')
 // a is being modified by innerFunc with closures
 const closureFunc1 = () => {
