@@ -1,3 +1,10 @@
+// -------------------------------------------
+//          Map
+// -------------------------------------------
+// https://www.w3schools.com/jsref/jsref_map.asp
+//
+//basic for loop
+//
 // for (let index = 0; index < array.length; index++) {
 //     const element = array[index]; 
 //     element +=1
@@ -18,12 +25,6 @@ const arrMaker = (minNum=0, maxNum=20, iterator=1) => {
 // console.log(arrMaker());
 // console.log(arrMaker(0,50,5));
 let myArr = arrMaker(1,5,1)
-
-// -------------------------------------------
-//          Map
-// -------------------------------------------
-// https://www.w3schools.com/jsref/jsref_map.asp
-//
 // return a new array that has some argument applied to every element of the array
 // const myMapArr = myArr.map((element, index, array) => element +1)
 // const myMapArr = myArr.map((e, i, a) => element +1)
