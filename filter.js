@@ -14,7 +14,7 @@ const arrMaker = (minNum=0, maxNum=20, iterator=1) => {
     }
     return newArr
 }
-let myArr = arrMaker(1,10,1)
+let myArr = arrMaker(1,20,1)
 
 // manual version
 // let newArr = []
@@ -61,9 +61,18 @@ const filteredArrMultiple = myArr.filter((element, index, array) => {
 
 // two versions
 // multiple if statements
-
-// single line
-
+const fiveOrThree = myArr.filter((element, index, array) => {
+    if (element % 3 === 0) {
+     return true
+    }
+    if (element % 5 === 0 ) {
+     return true
+    }
+ })
+ // single line
+ const fiveOrThreeSingle = myArr.filter(element => element % 3 === 0 || element % 5 === 0  )
+ const fiveAndThreeSingle = myArr.filter(element => element % 3 === 0 && element % 5 === 0  )
+ 
 
 
 console.log(myArr);
@@ -71,3 +80,7 @@ console.log(filteredArr);
 console.log(filteredArrReturn);
 console.log(filteredArrParams);
 console.log(filteredArrMultiple);
+console.log('!@-------fiveOrThree-------@!')
+console.log(fiveOrThree)
+console.log(fiveOrThreeSingle)
+console.log(fiveAndThreeSingle)
