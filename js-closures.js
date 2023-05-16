@@ -1,4 +1,9 @@
-// -------Closure-------
+// ----------------------------
+//   ---- Closures ----
+// ---------------------------
+// how scope works for enclosing functions
+// https://www.w3schools.com/js/js_function_closures.asp
+
 
 console.log('--------------Local Scope--------------------------------')
 // variable a is local for each scope
@@ -17,7 +22,7 @@ const closureFuncLocal = () => {
 closureFuncLocal()
 
 console.log('--------------Params--------------------------------')
-// a is being modified by innerFunc with closures
+// a is not being modified, the value is passed as a param
 const paramFunc = () => {
     let a = 'initial'
 

@@ -6,6 +6,7 @@
 // const newArr = new Array
 // const newArr = []
 
+// make a function the creates an array of the specified parameters
 const arrMaker = (minNum=0, maxNum=20, iterator=1) => {
     let newArr = new Array
     for (let index = minNum; index <= maxNum; index += iterator) {
