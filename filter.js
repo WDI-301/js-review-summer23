@@ -56,6 +56,15 @@ const filteredArrMultiple = myArr.filter((element, index, array) => {
    }
 })
 
+// make an arr that return values that are divisible by 5 or 3
+// element % 3 === 0
+
+// two versions
+// multiple if statements
+
+// single line
+
+
 
 console.log(myArr);
 console.log(filteredArr);
