@@ -67,7 +67,15 @@ const productArr = [
 ]
 
 const reduceArrQuantity = productArr.reduce(((accumulator,element) => accumulator += element.quantity), 0)
-
 console.log('!@-------reduceArrQuantity-------@!')
 console.log(reduceArrQuantity)
+
+// using the reduce method find out the total price
+// quantity * price
+
+// with a return / curly brace
+
+// single line version
+
+
 
