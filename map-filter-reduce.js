@@ -40,11 +40,13 @@ let myArr = arrMaker(1,5,1)
 //----For Each
 // https://www.w3schools.com/jsref/jsref_foreach.asp
 //
-// forEach iterates through the array like map, but runs it directly instead returning the new values
-// let accumulator = 0
+// forEach iterates through the array like map, but runs it directly inside the function instead returning the new values
 // const eachArr = myArr.forEach(element => accumulator += element + 1);
+// console.log(eachArr); // is undefined
+// console.log(myArr);  // is unchanged
 
-// console.log(myArr);
-// console.log(eachArr);
-// console.log(accumulator);
-// console.log(myMapArr);
+// let accumulator = 0
+// myArr.forEach(element => accumulator += element + 1);
+// console.log(accumulator); 
+
+// -------------------------------------------------
