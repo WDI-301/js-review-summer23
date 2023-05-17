@@ -33,7 +33,7 @@ console.log(fizzBuzzIfStatement(myArr))
 
 const fizzBuzzSwitch = (arr) => {
     return arr.map ( e => {
-        switch (true) {
+        switch (true) {  // does the below statement match the switch
             case e % 5 === 0 && e % 3 === 0:
                 return 'FizzBuzz'
             case e % 5 === 0:
@@ -52,6 +52,38 @@ let fruitArr = ["Banana", "Orange", "Avacado","Pear","Apple", "Mango", "Kiwi"];
 //make a switch statement that returns four, five, six, for the number of letters in the word,
 // or the original element if does not match these
 
+// let fruitSwitch = (arr) => {
+//     return arr.map( e => {
+//         switch (true) {
+//             case e.length === 4:
+//                 return 'Four'
+//             case e.length === 5:
+//                 return 'Five'
+//             case e.length === 6:
+//                 return 'Six'
+//             default:
+//                return e;
+//         }
+//     })
+// }
+
+let fruitSwitch = (arr) => {
+    return arr.map( e => {
+        switch (e.length) {
+            case 4:
+                return 'Four'
+            case 5:
+                return 'Five'
+            case 6:
+                return 'Six'
+            default:
+               return e;
+        }
+    })
+}
 
 //results:
 //["Six", "Six", "Avacado","Four","Five", "Five", "Four"];
+
+console.log('!@-------fruitSwitch-------@!')
+console.log(fruitSwitch(fruitArr))
