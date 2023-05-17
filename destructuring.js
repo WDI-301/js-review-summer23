@@ -88,3 +88,22 @@ console.log(makePost(username, post))
 
 //  ---------------- Object.keys && Object.values ------------------
 
+let pets = [
+            'Mr. Bigglesworth','Cat',3,
+            'Raphael','Turtle',15,
+            'Dug','Dog',5,
+            'Nymeria','Direwolf',7,
+            'Toothless','Dragon',21  
+]
+let things = [
+    ['Herbie','VW Bug',50,
+    'Hubble','Telescope',30,
+    'GPS','Satellite',45,
+    'Titan','Moon',4000000000,
+    'Empire State Building','Skyscraper',70]
+]
+let movies = [  
+                'Everything, Everywhere, All at Once', 'The Daniels', 2022, 10,
+                'Dune', 'Denis Villeneuve', 2021, 8,
+                'Blade Runner 2049', 'Denis Villeneuve', 2019, 9
+            ]

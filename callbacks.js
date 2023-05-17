@@ -64,8 +64,8 @@ const myMapper = (array, callback, modifier) => { // fill in params, modifier is
     return returnArr
 } 
 
-const myNewArr = myMapper(myArr, element => element + 1)
-// const myNewArr = myMapper(myArr, ((element, modifier) => element + modifier), 2)  // will accept the modifier param
+// const myNewArr = myMapper(myArr, element => element + 1)
+const myNewArr = myMapper(myArr, ((element, modifier) => element + modifier), 2)  // will accept the modifier param
 
 console.log('!@-------myMapper-------@!')
 console.log(myNewArr) // [2,3,4,5,6]
