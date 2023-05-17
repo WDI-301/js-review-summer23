@@ -50,7 +50,7 @@ console.log('!@-------Name Arry-------@!')
 console.log(nameArrayFunc())
 
 
-//------------API-------------
+//------------API example-------------
 
 let username = {
     userID: 1,
@@ -61,6 +61,30 @@ let username = {
 let post = {
     userID: 1,
     postID: 1,
-    tite: "I'm baby hexagon XOXO",
+    title: "I'm baby hexagon XOXO",
     post: "90's irony cloud bread keffiyeh four dollar toast marfa vinyl vaporware distillery pok pok forage. Gentrify yuccie fanny pack, vinyl dreamcatcher proident meditation whatever deserunt solarpunk. Actually tempor brunch, subway tile praxis normcore hot chicken irure tbh art party post-ironic officia vice raw denim. Sustainable direct trade bodega boys helvetica, vape occaecat shoreditch edison bulb adaptogen marfa schlitz banh mi. Tempor next level chicharrones ut sriracha. Sed marxism semiotics, salvia art party chillwave 90's eiusmod sus venmo hexagon."
 }
+
+const combineAPI = (username, post) => {
+    return {
+        ...post,
+        ...username
+    }
+}
+
+console.log('!@-------combineAPI-------@!')
+console.log(combineAPI(username, post))  //notice userID stays the same, you can only one of a key name
+
+const makePost = (username, post) => {
+    return {
+        title: post.title,
+        author: username.firstname,
+        post: post.post
+    }
+}
+console.log('!@-------makePost-------@!')
+console.log(makePost(username, post))
+
+
+//  ---------------- Object.keys && Object.values ------------------
+
