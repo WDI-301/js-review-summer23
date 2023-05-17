@@ -107,3 +107,49 @@ let movies = [
                 'Dune', 'Denis Villeneuve', 2021, 8,
                 'Blade Runner 2049', 'Denis Villeneuve', 2019, 9
             ]
+
+// Make a function that create objects out of the Array
+// turns:
+//  'Mr. Bigglesworth','Cat',3
+// into:
+// {
+//     name: 'Mr. Bigglesworth',
+//     type: 'Cat',
+//     age: 3
+// }
+
+const objMaker = (name, type, age) => {
+    let newObj = new Object
+    newObj = {
+        name: name,
+        type: type,
+        age, age
+    }
+    return newObj
+}
+const movieMaker = (name, type, age, rating) => {
+    let newObj = new Object
+    newObj = {
+        title: name,
+        director: type,
+        release: age,
+        rating: rating
+    }
+    return newObj
+}
+// function is for breaking up the array into defined lengths as the element
+// to pass into the above objMaker function
+const breakerFunc = (arr, indexLength, callbackFunc ) => {
+    let returnArr = new Array
+    //loop for
+    // 1) breaking up the arr into lenghts of indexLength (ex 3)
+    // 2) creating a new object with the callback
+    for (let index = 0; index < arr.length; index = index + indexLength) {
+        const element = arr[index];
+        returnArr.push(callbackFunc(...arr.slice(index, index+indexLength)))
+    }
+    return returnArr
+}
+
+console.log(breakerFunc(pets, 3, objMaker));
+console.log(breakerFunc(movies, 4, movieMaker));
