@@ -45,19 +45,32 @@ const calculate = (param0, param1, callBackFunc) => {
 
 calculate(2,3,multiply)
 
-
+// ------------------exercise------------------
 // recreate the map method using callbacks.  The only array method used should be .push()
 let myArr = [1,2,3,4,5]
-const myMapper = () => { // fill in params
-    //code
+const myMapper = (array, callback, modifier) => { // fill in params, modifier is for the above functions being used as the callback
+    // create a new array to push results into
+    let returnArr = new Array
+
+    // For Loop
+    // 1) iterate throught the orignal array passed in the params
+    // 2) apply te callback to each element of the array
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        returnArr.push(callback(element, modifier))
+    }
+
+    // return the new array
+    return returnArr
 } 
 
-const myNewArr = myMapper(myArr, element => element + 1)
+const myNewArr = myMapper(myArr, element => element +2)
+// const myNewArr = myMapper(myArr, ((element, modifier) => element + modifier), 2)  // will accept the modifier param
 
 console.log('!@-------myMapper-------@!')
 console.log(myNewArr) // [2,3,4,5,6]
 
 //bonus
 // can you modify your function so that the following works
-const myBonusArr = myMapper(myArr, add, 1)
+const myBonusArr = myMapper(myArr, add, 2)
 console.log(myBonusArr);// [2,3,4,5,6]
