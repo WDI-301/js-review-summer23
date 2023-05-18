@@ -207,21 +207,25 @@ const breakerArrayFunc = ( arr, callback ) => {
     // Array for returning
     let returnArr = new Array
 
-    //-----
+    //-----Version 1 -----
     // Array of keyNames
-    let keyNames = arr.slice(0 , indexLength)
+    // let keyNames = arr.slice(0 , indexLength)
 
-    // Array of values
-    let valuesArr = arr.slice(indexLength + 1)
+    // // Array of values
+    // let valuesArr = arr.slice(indexLength + 1)
 
-    // loop through valuesArr and send to my callback
-    // sends: 
-    // 1) keyNames
-    // 2) section of array where the length is equal to indexLength
+    // // loop through valuesArr and send to my callback
+    // // sends: 
+    // // 1) keyNames
+    // // 2) section of array where the length is equal to indexLength
 
-    for (let index = 0; index < valuesArr.length; index += indexLength) {
-        returnArr.push(callback(keyNames, valuesArr.slice(index, index + indexLength)))
-    }
+    // for (let index = 0; index < valuesArr.length; index += indexLength) {
+    //     returnArr.push(callback(keyNames, valuesArr.slice(index, index + indexLength)))
+    // }
+
+    // -----Version 2------
+    // same result with a single for loop
+
 
     return returnArr
 }
