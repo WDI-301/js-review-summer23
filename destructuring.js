@@ -150,3 +150,90 @@ const breakerFunc = (arr, indexLength, callbackFunc ) => {
 
 console.log(breakerFunc(pets, 3, objMaker));
 console.log(breakerFunc(movies, 4, movieMaker));
+
+//----CSV-----
+
+let petsCSV = [
+    'Name','Species', 'Age', null, 
+    'Mr. Bigglesworth','Cat',3,
+    'Raphael','Turtle',15,
+    'Dug','Dog',5,
+    'Nymeria','Direwolf',7,
+    'Toothless','Dragon',21  
+]
+let thingsCSV = [
+    'Name','Type', 'Age', null, 
+    'Herbie','VW Bug',50,
+    'Hubble','Telescope',30,
+    'GPS','Satellite',45,
+    'Titan','Moon',4000000000,
+    'Empire State Building','Skyscraper',70
+]
+let moviesCSV = [ 
+    'Title', 'Director', 'Year',  'Rating', null, 
+    'Everything, Everywhere, All at Once', 'The Daniels', 2022, 10,
+    'Dune', 'Denis Villeneuve', 2021, 8,
+    'Blade Runner 2049', 'Denis Villeneuve', 2019, 9
+]
+
+const objectMaker = (keyNames, values) => {
+    // keyNames = ['Name','Species', 'Age']
+    // values = ['Mr. Bigglesworth','Cat',3]
+    
+    let returnObj = new Object
+    // for loop version -----
+    // for (let index = 0; index < keyNames.length; index++) {
+    //     returnObj = {
+    //         ...returnObj,
+    //         [keyNames[index]]: values[index]
+    //     }
+    // }
+    //
+    // forEach version -----
+    keyNames.forEach( (element, index) => {
+        returnObj = {
+            ...returnObj,
+            [element]: values[index]
+        }
+    })
+
+    return returnObj
+}
+
+const breakerArrayFunc = ( arr, callback ) => {
+    // find kthe index of null
+    let indexLength = arr.indexOf(null)
+
+    // Array for returning
+    let returnArr = new Array
+
+    //-----
+    // Array of keyNames
+    let keyNames = arr.slice(0 , indexLength)
+
+    // Array of values
+    let valuesArr = arr.slice(indexLength + 1)
+
+    // loop through valuesArr and send to my callback
+    // sends: 
+    // 1) keyNames
+    // 2) section of array where the length is equal to indexLength
+
+    for (let index = 0; index < valuesArr.length; index += indexLength) {
+        returnArr.push(callback(keyNames, valuesArr.slice(index, index + indexLength)))
+    }
+
+    return returnArr
+}
+
+console.log('!@-------PetsCSV-------@!')
+console.log(breakerArrayFunc(petsCSV, objectMaker))
+
+console.log('!@-------thingsCSV-------@!')
+console.log(breakerArrayFunc(thingsCSV, objectMaker))
+
+
+console.log('!@-------moviesCSV-------@!')
+console.log(breakerArrayFunc(moviesCSV, objectMaker))
+
+
