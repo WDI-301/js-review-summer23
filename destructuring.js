@@ -86,7 +86,7 @@ console.log('!@-------makePost-------@!')
 console.log(makePost(username, post))
 
 
-//  ---------------- Object.keys && Object.values ------------------
+//  ---------------- Creating Objects from Arrays ------------------
 
 let pets = [
                 'Mr. Bigglesworth','Cat',3,
@@ -207,11 +207,11 @@ const breakerArrayFunc = ( arr, callback ) => {
     // Array for returning
     let returnArr = new Array
 
-    //-----Version 1 -----
-    // Array of keyNames
+    // //-----Version 1 -----
+    // // Array of keyNames
     // let keyNames = arr.slice(0 , indexLength)
 
-    // // Array of values
+    // // // Array of values
     // let valuesArr = arr.slice(indexLength + 1)
 
     // // loop through valuesArr and send to my callback
@@ -225,7 +225,9 @@ const breakerArrayFunc = ( arr, callback ) => {
 
     // -----Version 2------
     // same result with a single for loop
-
+    for (let index = indexLength + 1; index < arr.length; index += indexLength) {
+        returnArr.push(callback(arr.slice(0 , indexLength), arr.slice(index, index + indexLength)))
+    }
 
     return returnArr
 }
@@ -241,3 +243,20 @@ console.log('!@-------moviesCSV-------@!')
 console.log(breakerArrayFunc(moviesCSV, objectMaker))
 
 
+//  ---------------- Creating Arrays from Objects Object.keys && Object.values ------------------
+
+let moviesArray = breakerArrayFunc(moviesCSV, objectMaker)
+
+console.log('!@-------Movies Object-------@!')
+console.log(moviesArray[0])
+
+console.log('!@-------Object.keys------@!')
+console.log(Object.keys(moviesArray[0]))
+
+console.log('!@-------Object.values------@!')
+console.log(Object.values(moviesArray[0]))
+
+let movieKey = Object.keys(moviesArray[0])
+let movieTitle = Object.values(moviesArray[0])
+console.log(movieKey[0] + ': ' + movieTitle[0]);
+console.log(movieKey[1] + ': ' + movieTitle[1]);
