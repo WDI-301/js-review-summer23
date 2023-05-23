@@ -50,3 +50,34 @@ const asyncFunction = async () => {
 promiseFunc()
 asyncFunction()
 promise2Func()
+
+///-----from the homework-----
+
+var fetchData = () => new Promise((resolve, reject) => {
+    console.log('fetchingData from imaginary database')
+    setTimeout(() => {
+         try {
+           // fetchingData from imaginary database
+           if((Math.ceil(Math.random() * 2)) < 2){
+            //  throw new Error('Error!')
+           }
+           resolve({name: 'john', age:42})
+          } catch(error) {
+            reject(error);
+          }
+    }, 1000);
+  });
+  
+  fetchData()
+  .then(res => console.log(res))
+  .catch(err => console.log(err))
+
+  const fetchDataAsync = async () => {
+    try {
+        const results = await fetchData()
+        console.log(results)
+    } catch (error) {
+        console.log(error);
+    }
+  }
+  fetchDataAsync()
